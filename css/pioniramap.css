@@ -25,6 +25,12 @@ body {
   margin: 12px;
 }
 
+.devider {
+  width 12px;
+  height; auto;
+  display: inline-block;
+}
+
 .leaflet-container {
   font: 11px/1.25 "Helvetica Neue", Arial, Helvetica, sans-serif;
   line-height: 1.25;
