@@ -19,6 +19,11 @@ body {
   height: 600px;
 }
 
+.leaflet-container {
+  font: 11px/1.25 "Helvetica Neue", Arial, Helvetica, sans-serif;
+  line-height: 1.25;
+}
+
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
   background: white;
   color: #333;
@@ -37,12 +42,12 @@ body {
 }
 
 .leaflet-popup-content {
-  margin: 16px;
+  margin: 12px;
   line-height: 1.25;
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content p {
-  margin: 8px 0px 8px 0px;
+  margin: 6px 0px 6px 0px;
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content a {
@@ -63,7 +68,7 @@ body {
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content .thumbnail {
-  margin-right: 16px;
+  margin: 0px 12px 12px 0px;
   float: left;
 }
 
