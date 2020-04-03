@@ -1,36 +1,141 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>pioniraMap-2.0</title>
+  <title>pioniraMap-2.0</title>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="crossorigin=""/>
-    <link rel="stylesheet" href="css/pioniramap.css"/>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="crossorigin=""></script>
-
-
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+  <link rel="stylesheet" href="css/pioniramap.css" />
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 </head>
+
 <body>
+  <div id="mapid"></div>
+  <p></p>
+  <button id="arcLayer" type="button" name="button">Places</button>
+  <button id="pioLayer" type="button" name="button">Portraits</button>
 
-<div id="mapid"></div>
-<script>
-
-	var map = L.map('mapid').setView([38.2, -8], 8);
+  <script>
+    var map = L.map('mapid').setView([38.2, -8], 8);
 
     L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}', {
-        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        subdomains: 'abcd',
-        minZoom: 2,
-        maxZoom: 20,
-        ext: 'png'
+      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      subdomains: 'abcd',
+      minZoom: 2,
+      maxZoom: 20,
+      ext: 'png'
     }).addTo(map);
 
-    L.marker([38.2,-8]).addTo(map);
+    var popup = L.popup();
 
-    </script>
+    var pioIcon = L.icon({
+      iconUrl: 'img/portrait-YD.png',
+      iconSize: [24, 24],
+      iconAnchor: [12, 0],
+      popupAnchor: [0, 2]
+    });
+
+    var arcIcon = L.icon({
+      iconUrl: 'img/place-TL.png',
+      iconSize: [24, 24],
+      iconAnchor: [12, 0],
+      popupAnchor: [0, 2]
+    });
+
+    var pioIconHover = L.icon({
+      iconUrl: 'img/portrait-R.png',
+      iconSize: [24, 24],
+      iconAnchor: [12, 0],
+      popupAnchor: [0, 2]
+    });
+
+    var arcIconHover = L.icon({
+      iconUrl: 'img/place-R.png',
+      iconSize: [24, 24],
+      iconAnchor: [12, 0],
+      popupAnchor: [0, 2]
+    });
+
+    /*
+    L.marker([38.2, -8], {
+      icon: arcIcon
+    }).addTo(map);
+*/
+
+    // Adding architectureMarkers
+    var arcMarkers = [];
+    var coordinates = [
+      [38.474658, -8.993447]
+    ];
+
+    coordinates.forEach(function(coords) {
+      var marker = L.marker(coords, {
+        icon: arcIcon
+      }).on('mousemove', function(e) {
+        e.target.setIcon(arcIconHover);
+      }).on('mouseout', function(e) {
+        e.target.setIcon(arcIcon);
+      });
+      arcMarkers.push(marker);
+    });
+
+    var arcGroup = L.featureGroup(arcMarkers).addTo(map);
+
+    // Adding placeMarkers
+    var pioMarkers = [];
+    var coordinates = [
+      [38.649351, -8.210639],
+      [38.715812, -9.150072],
+      [38.717350, -9.165220],
+      [38.448690, -7.487376],
+      [38.789090, -9.460521],
+      [37.457316, -8.486756],
+      [38.703195, -8.325727],
+      [38.194246, -8.617208],
+      [38.379816, -7.560493]
+    ];
+
+    coordinates.forEach(function(coords) {
+      var marker = L.marker(coords, {
+        icon: pioIcon
+      }).on('mousemove', function(e) {
+        e.target.setIcon(pioIconHover);
+      }).on('mouseout', function(e) {
+        e.target.setIcon(pioIcon);
+      });
+      pioMarkers.push(marker);
+    });
+
+    var pioGroup = L.featureGroup(pioMarkers).addTo(map);
+
+    // fit bounds of portrait coordinates = fetureGroup.piomarkers
+    map.fitBounds(pioGroup.getBounds(), {
+      padding: [20, 20]
+    });
+
+
+    $(document).on('click', '#pioLayer', function() {
+      if (map.hasLayer(pioGroup)) {
+        map.removeLayer(arcGroup);
+      } else {
+        pioGroup.addTo(map);
+      }
+    });
+
+    $(document).on('click', '#arcLayer', function() {
+      if (map.hasLayer(arcGroup)) {
+        map.removeLayer(pioGroup);
+      } else {
+        arcGroup.addTo(map);
+      }
+    });
+  </script>
 
 </body>
+
 </html>
