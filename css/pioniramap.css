@@ -21,14 +21,7 @@ body {
 
 .buttons {
   display: flex;
-  justify-content: center;
-  margin: 12px;
-}
-
-.divider {
-  width 12px;
-  height; auto;
-  display: inline-block;
+  padding: 8px 16px;
 }
 
 .leaflet-container {
