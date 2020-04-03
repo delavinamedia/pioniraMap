@@ -19,7 +19,8 @@ body {
   height: 600px;
 }
 
-button {
+.buttons {
+  text-align: center;
   margin: auto;
 }
 
