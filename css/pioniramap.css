@@ -10,6 +10,20 @@
       height: 600px;
     }
 
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .navdiv {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #326f90 !important;
+    }
+
     .leaflet-popup-content-wrapper, .leaflet-popup-tip {
       background: white;
       color: #333;
@@ -33,8 +47,8 @@
     }
 
     .leaflet-popup-content-wrapper .leaflet-popup-content p {
-    margin: 0px 0px 5px 0px;
-}
+      margin: 0px 0px 5px 0px;
+    }
 
     *, ::after, ::before {
       box-sizing: border-box;
