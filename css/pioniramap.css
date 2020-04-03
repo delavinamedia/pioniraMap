@@ -83,7 +83,3 @@ body {
   margin: 0px 12px 12px 0px;
   float: left;
 }
-
-*, ::after, ::before {
-  box-sizing: border-box;
-}
