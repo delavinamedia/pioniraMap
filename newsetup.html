@@ -19,10 +19,13 @@
   <p></p>
   <button id="arcLayer" type="button" name="button">Places</button>
   <button id="pioLayer" type="button" name="button">Portraits</button>
+  <button id="resetLayer" type="button" name="button">Show All</button>
 
   <script>
+  //  map definition and setup of center point and zoom
     var map = L.map('mapid').setView([38.2, -8], 8);
 
+// basemap link and attribution
     L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}', {
       attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       subdomains: 'abcd',
@@ -31,8 +34,10 @@
       ext: 'png'
     }).addTo(map);
 
+// popup definition
     var popup = L.popup();
 
+// marker definition
     var pioIcon = L.icon({
       iconUrl: 'img/portrait-YD.png',
       iconSize: [24, 24], // size of the icon
@@ -61,11 +66,11 @@
       popupAnchor: [5, 0]
     });
 
-    /*
-    L.marker([38.2, -8], {
-      icon: arcIcon
-    }).addTo(map);
-*/
+
+//    L.marker([38.2, -8], {
+//      icon: arcIcon
+//    }).addTo(map);
+
 
     // Adding architectureMarkers
     var arcMarkers = [];
@@ -84,7 +89,7 @@
       arcMarkers.push(marker);
     });
 
-    var arcGroup = L.featureGroup(arcMarkers).addTo(map);
+    var arcGroup = L.featureGroup(arcMarkers).bindPopup(popup).addTo(map);
 
     // Adding placeMarkers
     var pioMarkers = [];
@@ -123,7 +128,7 @@
       if (map.hasLayer(pioGroup)) {
         map.removeLayer(arcGroup);
       } else {
-        pioGroup.addTo(map);
+        pioGroup.addTo(map), map.removeLayer(arcGroup);
       }
     });
 
@@ -131,9 +136,15 @@
       if (map.hasLayer(arcGroup)) {
         map.removeLayer(pioGroup);
       } else {
-        arcGroup.addTo(map);
+        arcGroup.addTo(map), map.removeLayer(pioGroup);
       }
     });
+
+    $(document).on('click', '#resetLayer', function() {
+        arcGroup.addTo(map), pioGroup.addTo(map);
+    });
+
+
   </script>
 
 </body>
