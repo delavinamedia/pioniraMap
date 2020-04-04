@@ -79,7 +79,7 @@ button:hover, button:active {
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content a:visited {
-  color: inherit;
+  color: #d33333;
   text-decoration: none;
 }
 
