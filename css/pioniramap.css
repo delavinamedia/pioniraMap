@@ -25,12 +25,14 @@ body {
 }
 
 button {
+  font-size: 8px;
   margin-left: 12px;
 }
 
 button:active {
-  background-color: #d33333;
-  text-decoration: underline;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border-color: #d33333;
 }
 
 .leaflet-container {
