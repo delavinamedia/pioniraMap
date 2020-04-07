@@ -21,8 +21,9 @@
 
     <button id="arcLayer" name="places">Places</button>
     <button id="pioLayer" name="portraits">Portraits</button>
-    <button id="resetLayer" role="button" name="reset" aria-pressed="true">Show All</button>
-
+<div id="resetLayer">
+    <button role="button" name="reset" aria-pressed="true">Show All</button>
+</div>
 
   </div>
   <script>
@@ -148,7 +149,15 @@
         icon: pioIcon
       }).bindPopup(
         '<div class="thumbnail"><img width="100" height="100%" src="img/fabAlentejana.png"></div><p><a href="http://pioniraproject.com/fabricaalentejanalanificios/">Fábrica Alentejana De Lanifícios</a></p><p>Mizette Nielsen preserves a piece of <strong>Portuguese cultural history </strong>by keeping alive regional weaver patterns for textile manufacturing with remixed colours.</p>'
+      ),
+
+      viúvaLamego = L.marker([38.772723, -9.350270], {
+        icon: pioIcon
+      }).bindPopup(
+        '<div class="thumbnail"><img width="100" height="100%" src="img/viúvaLamego.png"></div><p><a href="http://pioniraproject.com/viuvalamego/">Viúva Lamego</a></p><p><strong>Hand painted tiles </strong>date back to the mid 16th Century in Portugal, one of the most traditional factories Viúva Lamego explains their relevance today.</p>'
       );
+
+
 
 
 
@@ -156,7 +165,7 @@
 
     var arcGroup = L.layerGroup([stMaria]);
 
-    var pioGroup = L.layerGroup([Terrapalha, CLARA, Corval, officinasDoConvento, Morada, Barradas, Esporão, tapete, AnahoryAlmeida, AiresMateus, fabAlentejana]);
+    var pioGroup = L.layerGroup([Terrapalha, CLARA, Corval, officinasDoConvento, Morada, Barradas, Esporão, tapete, AnahoryAlmeida, AiresMateus, fabAlentejana, viúvaLamego]);
 
 
     var overlays = {
