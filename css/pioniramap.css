@@ -35,12 +35,10 @@ button {
   background-color: #fff;
 }
 
-button:hover {
+button:hover, :active {
   color: #d33333;
   text-decoration: 1.5px underline;
 }
-
-
 
 .leaflet-container {
   font: 11px/1.25 "Helvetica Neue", Arial, Helvetica, sans-serif;
