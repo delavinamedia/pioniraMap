@@ -75,14 +75,14 @@ button:hover, :active {
   margin: 6px 0px 6px 0px;
 }
 
-.leaflet-popup-content-wrapper .leaflet-popup-content a, a:visited {
+.leaflet-popup-content-wrapper .leaflet-popup-content a {
   text-transform: uppercase;
   font-weight: bold;
   text-decoration: none;
   color: #326f90;
 }
 
-.leaflet-popup-content-wrapper .leaflet-popup-content a:hover, a:active {
+.leaflet-popup-content-wrapper .leaflet-popup-content a:hover {
   text-decoration: 1.25px underline;
   color: #d33333;
 }
