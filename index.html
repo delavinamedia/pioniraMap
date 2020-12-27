@@ -26,7 +26,7 @@
   </div>
   <script>
     //  map definition and setup of center point and zoom
-    var map = L.map('mapid').setView([38.123, -8,474], 8);
+    var map = L.map('mapid').setView([45.4, 7.463138], 5); // old setView([40.123, -8,474], 6);
 
     // basemap link and attribution
     L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}', {
@@ -153,17 +153,47 @@
         icon: pioIcon
       }).bindPopup(
         '<div class="thumbnail"><img width="100" height="100%" src="img/viúvaLamego.png"></div><p><a href="https://pioniraproject.com/viuvalamego/" target="self">Viúva Lamego</a></p><p><strong>Hand painted tiles </strong>date back to the mid 16th Century in Portugal, one of the most traditional factories Viúva Lamego explains their relevance today.</p>'
+      ),
+
+      searanch = L.marker([38.717088, -123.459678], {
+        icon: arcIcon
+      }).bindPopup(
+        '<div class="thumbnail"><img width="100" height="100%" src="img/searanch.png"></div><p><a href="https://pioniraproject.com/sea-ranch-charles-moore/" target="self">The Sea Ranch</a></p><strong>The Sea Ranch</strong> was built in the 1960s. It is a PIONIRA architecture favourite due to its <strong>careful feeling for the surrounding landscape</strong>, the <strong>sustainable use of wood</strong>, the facade cladding and the overall masterplan.</p>'
+      ),
+
+      casahartley = L.marker([41.063669, 8.960341], {
+        icon: arcIcon
+      }).bindPopup(
+        '<div class="thumbnail"><img width="100" height="100%" src="img/Ponis.png"></div><p><a href="https://pioniraproject.com/casa-hartley-alberto-ponis/" target="self">Casa Hartley</a></p>The built work of <strong>Alberto Ponis</strong> in Sardinia is extraordinary in its <strong>sensitive understanding</strong> and its extreme dependency on the immediate topography and environment.</p>'
+      ),
+
+      eileengray = L.marker([43.760039, 7.463138], {
+        icon: arcIcon
+      }).bindPopup(
+        '<div class="thumbnail"><img width="100" height="100%" src="img/eileengray.png"></div><p><a href="https://pioniraproject.com/e1027-eileen-gray/" target="self">Villa E.1027 by Eileen Gray</a></p>For <strong>Eileen Gray</strong>, a piece of furniture had to be <strong>practical and comfortable</strong>; it was neither the mere carrier of an idea or an aesthetic nor purely functional. She always added a <strong>touch of humour or irony</strong> to her designs.</p>'
+      ),
+
+      plochmann = L.marker([47.927122, 11.355141], {
+        icon: pioIcon
+      }).bindPopup(
+        '<div class="thumbnail"><img width="100" height="100%" src="img/plochmann.png"></div><p><a href="https://pioniraproject.com/rudolf-plochmann/" target="self">Forest Management</a></p><strong>Rudolf Plochmann</strong> explains contemporary forestation methods, the many qualities of wood and the beauty of the forest’s atmosphere to us.</p>'
+      ),
+
+      Fanelsa = L.marker([53.171238, 13.751484], {
+        icon: pioIcon
+      }).bindPopup(
+        '<div class="thumbnail"><img width="100" height="100%" src="img/fanelsa.png"></div><p><a href="https://pioniraproject.com/niklas-fanelsa/" target="self">Atelier Fanelsa</a></p><strong>Niklas Fanelsa</strong> spoke with us about the potential and future of rural areas, new narratives, the beauty and essence of crafts and raw materials and how to learn from the countryside.</p>'
       );
 
 
-
+      //
 
 
     // Define Groups
 
-    var arcGroup = L.layerGroup([stMaria]);
+    var arcGroup = L.layerGroup([stMaria, searanch, casahartley, eileengray]);
 
-    var pioGroup = L.layerGroup([Terrapalha, officinasDoConvento, viúvaLamego, Morada, Corval, AiresMateus, Clara, AnahoryAlmeida, Barradas, fabAlentejana, Esporão, tapete]);
+    var pioGroup = L.layerGroup([Terrapalha, officinasDoConvento, viúvaLamego, Morada, Corval, AiresMateus, Clara, AnahoryAlmeida, Barradas, fabAlentejana, Esporão, tapete, plochmann, Fanelsa]);
 
 //
 
