@@ -219,7 +219,31 @@
         icon: pioIcon
       }).bindPopup(
         '<div class="thumbnail"><img width="100" height="100%" src="img/Bischof.png"></div><p><a href="https://pioniraproject.com/helmut-bischof/" target="self" >Helmut Bischof</a></p><strong>Helmut Bischof</strong> works in Schwarzenberg, Austria. He is a timber shingle artisan since many years, passing on the <strong>traditional technique</strong> to his sons in the region.</p>'
-      );
+      )
+      BosnaQuilt = L.marker([47.503087, 9.743755], {
+        icon: pioIcon
+      }).bindPopup(
+        '<div class="thumbnail"><img width="100" height="100%" src="img/bosnaquilt.png"></div><p><a href="https://https://pioniraproject.com/bosna-quilt/" target="self" >Bosna Quilt Werkstatt</a></p><strong>Lucia and Daniel</strong> complement each other – he is a graphic designer and she is a painter and quilt designer. Together with eleven women in Bosnia they run, display and design Bosna Quilts in Bregenz, Austria.</p>'
+      ),
+
+      Vero = L.marker([52.523254, 13.496749], {
+        icon: pioIcon
+      }).bindPopup(
+        '<div class="thumbnail"><img width="100" height="100%" src="img/vero.png"></div><p><a href="https://https://pioniraproject.com/veronika-janovcova/" target="self" >Veronika Janovcova</a></p><strong>Vero</strong> makes hemp lime and clay sculptures in her studio in Berlin, Lichtenberg. Usually studying architecture, she is spending more and more time carving from these materials to create smooth monoliths.</p>'
+      ),
+
+      CasadoPenedo = L.marker([41.488799, -8.067707], {
+        icon: arcIcon
+      }).bindPopup(
+        '<div class="thumbnail"><img width="100" height="100%" src="img/penedo.png"></div><p><a href="https://https://pioniraproject.com/veronika-janovcova/" target="self" >Casa do Penedo</a></p>Since its construction in the early 1970s the <strong>boulder house</strong> (Portuguese: Casa do Penedo) has been part of the hilly landscape in the district of Fafe, northern Portugal. The position at the top of a hill allows a calming view across the region and tempts you to pause for a moment.</p>'
+      ),
+
+      CostaNova = L.marker([40.615586, -8.751210], {
+        icon: arcIcon
+      }).bindPopup(
+        '<div class="thumbnail"><img width="100" height="100%" src="img/costanova.png"></div><p><a href="https://https://pioniraproject.com/costa-nova-cultural-center/" target="self" >Costa Nova Cultural and Social Center</a></p>The unusual <strong>timber buildings</strong> represents a link between the waterfront (views) and the urban fabric of Costa Nova. Constructive inspiration was taken from the vernacular “palheiro” technique, a way of building stilt-like structures on the sand dunes.</p>'
+      )
+;
 
 
       // 47.417367, 9.848042
@@ -227,9 +251,9 @@
 
     // Define Groups
 
-    var arcGroup = L.layerGroup([stMaria, searanch, casahartley, eileengray]);
+    var arcGroup = L.layerGroup([stMaria, searanch, casahartley, eileengray, CasadoPenedo, CostaNova]);
 
-    var pioGroup = L.layerGroup([Terrapalha, officinasDoConvento, viúvaLamego, Morada, Corval, AiresMateus, Clara, AnahoryAlmeida, Barradas, fabAlentejana, Esporão, tapete, plochmann, Fanelsa, Bischof, Schubert, Wittmann, Hepp, GruenderKirfel, Nagler]);
+    var pioGroup = L.layerGroup([Terrapalha, officinasDoConvento, viúvaLamego, Morada, Corval, AiresMateus, Clara, AnahoryAlmeida, Barradas, fabAlentejana, Esporão, tapete, plochmann, Fanelsa, Bischof, Schubert, Wittmann, Hepp, GruenderKirfel, Nagler, BosnaQuilt, Vero]);
 
 //
 
