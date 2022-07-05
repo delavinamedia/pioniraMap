@@ -242,18 +242,24 @@
         icon: arcIcon
       }).bindPopup(
         '<div class="thumbnail"><img width="100" height="100%" src="img/costanova.png"></div><p><a href="https://pioniraproject.com/costa-nova-cultural-center/" target="self" >Costa Nova Cultural and Social Center</a></p>The unusual <strong>timber buildings</strong> represents a link between the waterfront (views) and the urban fabric of Costa Nova. Constructive inspiration was taken from the vernacular “palheiro” technique, a way of building stilt-like structures on the sand dunes.</p>'
+      ),
+
+      FermeduRail = L.marker([48.887387, 2.387400], {
+        icon: pioIcon
+      }).bindPopup(
+        '<div class="thumbnail"><img width="100" height="100%" src="img/FermeduRail.jpg"></div><p><a href="https://pioniraproject.com/ferme-du-rail/" target="self" >la Ferme du Rail</a></p> is a meeting, accommodation and training place around <strong>urban agriculture</strong> in Paris (19th), a neighborhood facility around urban agriculture that uses market gardening to recover the organic waste collected. Its objective is to minimize the need for energy, food and financial resources by implementing a <strong>circular economy</strong>. </p>'
       )
 ;
 
 
-      // 47.417367, 9.848042
+      // 
 
 
     // Define Groups
 
     var arcGroup = L.layerGroup([stMaria, searanch, casahartley, eileengray, CasadoPenedo, CostaNova]);
 
-    var pioGroup = L.layerGroup([Terrapalha, officinasDoConvento, viúvaLamego, Morada, Corval, AiresMateus, Clara, AnahoryAlmeida, Barradas, fabAlentejana, Esporão, tapete, plochmann, Fanelsa, Bischof, Schubert, Wittmann, Hepp, GruenderKirfel, Nagler, BosnaQuilt, Vero]);
+    var pioGroup = L.layerGroup([Terrapalha, officinasDoConvento, viúvaLamego, Morada, Corval, AiresMateus, Clara, AnahoryAlmeida, Barradas, fabAlentejana, Esporão, tapete, plochmann, Fanelsa, Bischof, Schubert, Wittmann, Hepp, GruenderKirfel, Nagler, BosnaQuilt, Vero, FermeduRail]);
 
 //
 
