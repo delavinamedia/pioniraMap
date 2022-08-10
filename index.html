@@ -207,7 +207,7 @@
         icon: pioIcon
       }).bindPopup(
         '<div class="thumbnail"><img width="100" height="100%" src="img/gruenderkirfel.png"></div><p><a href="https://pioniraproject.com/gruender-kirfel/" target="self">Anika Gruender and Florian Kirfel</a></p><strong>Anika Gruender and Florian Kirfel</strong> spoke to us about their move to the German countryside in Thüringen and about opening up an architecture practice there, Next to recuperating the old castle of the small village, they planned and built a wooden shed for leisure and stay. </p>'
-      ) ,
+      ),
 
       Nagler = L.marker([48.149711, 11.567707], {
         icon: pioIcon
@@ -251,7 +251,7 @@
         '<div class="thumbnail"><img width="100" height="100%" src="img/FermeduRail.jpg"></div><p><a href="https://pioniraproject.com/ferme-du-rail/" target="self" >la Ferme du Rail</a></p><p> is a neighborhood facility around <strong>urban agriculture</strong> in Paris (19th) that uses market gardening to recover the organic waste collected. Its objective is to minimize the need for energy, food and financial resources by implementing a <strong>circular economy</strong>. </p>'
       ),
 
-      pianoterra = L.marker([48.859701, 2.37566761], {
+      pianoterra = L.marker([48.859701, 2.3756676], {
         icon: pioIcon
       }).bindPopup(
         '<div class="thumbnail"><img width="100" height="100%" src="img/pianoterra.png"></div><p><a href="https://pioniraproject.com/pianoterra/" target="self" >Pianoterra</a></p><p> has the ambition to bring architecture to the street level and not to the fourth floor of the street and in a closed, secure and impassable place. And so, everything you see around, are works linked to architecture.</p>'
@@ -260,15 +260,11 @@
 ;     //  This semicolon is super !important to close the list
 
 
-      //  48.88691435195914, 2.3849022491583054
-      //  48.85970133610522, 2.3756676183800147 pianoterra
-
-
     // Define Groups
 
     var arcGroup = L.layerGroup([stMaria, searanch, casahartley, eileengray, CasadoPenedo, CostaNova]);
 
-    var pioGroup = L.layerGroup([Terrapalha, officinasDoConvento, viúvaLamego, Morada, Corval, AiresMateus, Clara, AnahoryAlmeida, Barradas, fabAlentejana, Esporão, tapete, plochmann, Fanelsa, Bischof, Schubert, Wittmann, Hepp, GruenderKirfel, Nagler, BosnaQuilt, Vero, FermeduRail]);
+    var pioGroup = L.layerGroup([Terrapalha, officinasDoConvento, viúvaLamego, Morada, Corval, AiresMateus, Clara, AnahoryAlmeida, Barradas, fabAlentejana, Esporão, tapete, plochmann, Fanelsa, Bischof, Schubert, Wittmann, Hepp, GruenderKirfel, Nagler, BosnaQuilt, Vero, FermeduRail, pianoterra]);
 
 //
 
